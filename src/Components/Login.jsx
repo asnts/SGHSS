@@ -32,7 +32,7 @@ const Login = () => {
             <p>Olá, bem vindo(a) de volta!</p>
 
             <div className="input-field">
-                <input type="e-mail" placeholder="Usuário"
+                <input type="e-mail" placeholder="E-mail"
                 onChange={(e) => setUsername(e.target.value)} />
             </div>
 
@@ -44,18 +44,19 @@ const Login = () => {
             </div> 
 
             <div className="lembrar-me">
-                <label>
-                    <input type='checkbox' />
-                     Lembrar-me
-                </label>          
+                <label className='check'>
+                    <input type='checkbox' />  Lembrar-me                    
+                </label>      
+
+                <a href="#">Esqueceu sua senha?</a>    
 
             </div>     
             
-            <div className='Esqueceu_a_senha'>
+            {/* <div className='Esqueceu_a_senha'>
 
                 <a href="#">Esqueceu a senha?</a>                
 
-            </div>
+            </div> */}
             
             <div className="Entrar">
 
