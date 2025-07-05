@@ -48,12 +48,29 @@ font-size: 25px;
     width: 100%;
     height: 70px;
     display: flex;
-    justify-content: center;
-    font-size: 15px;
-    margin: -15px 0 15px;
-    border: 2px solid red;
-    
+    justify-content:space-between;    
+    font-size: 20px;
+   
 }
+
+.lembrar-me label input{
+
+   padding-left: 30px;
+   margin-right: 5px;
+}
+
+
+.lembrar-me a {
+  color: #000000;
+  text-decoration: underline;
+ 
+}  
+
+
+.lembrar-me a:hover {
+  color: #38BDF2;
+}
+
 
 .Entrar{
     display: flex;
@@ -72,18 +89,7 @@ font-size: 25px;
   color: #333;
   }
 
-.Esqueceu_a_senha{
-    text-align: center;
-     margin: 30px auto;
-     font-size: 20px;
 
-}  
-
-.Esqueceu_a_senha a {
-  color: #000000;
-  text-decoration: underline;
- 
-}  
 
 
 .Cadastro {
@@ -98,4 +104,8 @@ font-size: 25px;
   color: #000000;
   text-decoration: underline;
   
+}
+
+.Cadastro a:hover {
+  color: #38BDF2;
 }
