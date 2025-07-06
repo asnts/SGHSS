@@ -1,4 +1,3 @@
-import React from 'react'
 
 import { useState } from 'react'
 import logo from '/src/assets/logo_cortada-removebg-preview.png';
@@ -10,11 +9,29 @@ import "./Login.css"
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [emailError, setEmailError] = useState("")
+
+
+     const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return regex.test(email)
+  }
 
     const handleSubmit = (event) => {
 
-        console.log("teste", username, password);
+        event.preventDefault();  
+        
+        console.log("handleSubmit chamado!")
 
+
+        if (!validateEmail(username)) {
+      setEmailError("Digite um e-mail válido.")
+      return
+    } else {
+      setEmailError("") // limpa o erro se válido
+    }
+   
+    
     }
 
 
@@ -32,12 +49,14 @@ const Login = () => {
             <p>Olá, bem vindo(a) de volta!</p>
 
             <div className="input-field">
-                <input type="e-mail" placeholder="E-mail"
-                onChange={(e) => setUsername(e.target.value)} />
+                <input type="email" placeholder="E-mail" 
+                onChange={(e) => setUsername(e.target.value)} required />
             </div>
 
+             {emailError && <span className="error">{emailError}</span>}
+
             <div className="input-field">
-                <input type='senha' placeholder="Senha"
+                <input type='password' placeholder="Senha" required
                 onChange={(e) => setPassword(e.target.value)}/>
                 
 
@@ -52,15 +71,10 @@ const Login = () => {
 
             </div>     
             
-            {/* <div className='Esqueceu_a_senha'>
-
-                <a href="#">Esqueceu a senha?</a>                
-
-            </div> */}
-            
+                       
             <div className="Entrar">
 
-                <button>Entrar</button>
+                <button type="submit">Entrar</button>
                 
             </div>
 
