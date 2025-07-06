@@ -21,16 +21,16 @@ const Login = () => {
 
         event.preventDefault();  
         
-        console.log("handleSubmit chamado!")
-
+        
 
         if (!validateEmail(username)) {
       setEmailError("Digite um e-mail válido.")
       return
     } else {
-      setEmailError("") // limpa o erro se válido
+      setEmailError("") 
     }
    
+     alert("Login efetuado com sucesso!");
     
     }
 
